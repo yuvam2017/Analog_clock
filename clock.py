@@ -33,7 +33,7 @@ class Clock:
         # path = "/home/tony/projects/Kali_mess/clm20.gif" Works Fine
         # path = "/home/tony/projects/Kali_mess/clm35.png"
         # path = "/home/tony/projects/Kali_mess/clm65.png" Awesome needs the hand length shorter
-        path = "/home/tony/projects/Kali_mess/clnh5.jpg" #Works Fine super one
+        path = "Images/clnh5.jpg" #Works Fine super one
         # path = "/home/tony/projects/Kali_mess/clock.jpg"
         bg=Image.open(f"{path}")
         bg = bg.resize((300,300),Image.ANTIALIAS)

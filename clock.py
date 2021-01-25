@@ -1,5 +1,6 @@
 from tkinter import *
 import os
+import shutil
 from datetime import *
 import time
 from math import *
@@ -22,19 +23,17 @@ class Clock:
     def clock_image(self,hr,min_,sec):
         clock = Image.new("RGB",(400,400),(255,255,255))
         draw = ImageDraw.Draw(clock)
-        #======For Clock image 
-        # path = "/home/tony/projects/Kali_mess/cl1.png"
-        # path = "/home/tony/projects/Kali_mess/cl2.png"
-        # path = "/home/tony/projects/Kali_mess/cl3.jpg" Works Fine
-        # path = "/home/tony/projects/Kali_mess/cl4.png" Works Fine
-        # path = "/home/tony/projects/Kali_mess/cl6.jpg" 
-        # path = "/home/tony/projects/Kali_mess/cl20.gif" Works Fine
-        # path = "/home/tony/projects/Kali_mess/clkj52.png"
-        # path = "/home/tony/projects/Kali_mess/clm20.gif" Works Fine
-        # path = "/home/tony/projects/Kali_mess/clm35.png"
-        # path = "/home/tony/projects/Kali_mess/clm65.png" Awesome needs the hand length shorter
-        path = "Images/clnh5.jpg" #Works Fine super one
-        # path = "/home/tony/projects/Kali_mess/clock.jpg"
+        #======For Clock image
+        
+        os.mkdir("Images")
+        shutil.move("clnh5.jpg","Images/clnh5.jpg")
+        shutil.move("cl14.jpg","Images/cl4.jpg")
+        shutil.move("cl13.jpg","Images/vl13.jpg")
+        shutil.move("cl20.gif","Images/cl20.gif")
+        shutil.move("clm20.gif","Images/clm20.gif")
+        shutil.move("clm65.png","Images/clm65.png")
+        
+        path = "Images/clnh5.jpg"
         bg=Image.open(f"{path}")
         bg = bg.resize((300,300),Image.ANTIALIAS)
         clock.paste(bg,(50,50))
